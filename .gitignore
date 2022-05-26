@@ -1,0 +1,10 @@
+﻿/.idea
+/Library
+/Logs
+/obj
+/Packages
+/ProjectSettings
+/Temp
+/UserSettings
+Assembly-CSharp.csproj
+Zoomer.sln
