@@ -11,7 +11,8 @@ public class UI : MonoBehaviour
     public static UI _;
 
     public Text input_name;
-    public Text input_time;
+    public Text input_start_time;
+    public Text input_end_time;
     public Text input_url;
 
     public Text output_class;
