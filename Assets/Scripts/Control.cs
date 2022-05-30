@@ -1,12 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Control : MonoBehaviour
 {
+    private void Awake()
+    {
+        Core.Load();
+    }
+
     public void OnRegister()
     {
-        UI._.output_class.text = UI._.input_name.text;
-        UI._.output_remain_time.text = UI._.input_start_time.text;
+        Core.UI.output_class = Core.UI.input_name;
+        Core.UI.output_remain_time = Core.UI.input_start_time;
     }
 }

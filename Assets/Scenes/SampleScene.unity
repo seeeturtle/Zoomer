@@ -1287,7 +1287,7 @@ GameObject:
   - component: {fileID: 702539111}
   - component: {fileID: 702539110}
   m_Layer: 0
-  m_Name: UI
+  m_Name: UI_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
