@@ -15,6 +15,8 @@ public class UI
         _reference = reference;
     }
 
+    #region ui properties
+
     public string input_name
     {
         get => _reference.input_name.text;
@@ -35,6 +37,11 @@ public class UI
         get => _reference.input_url.text;
         set => _reference.input_url.text = value;
     }
+    public int input_day
+    {
+        get => _reference.input_day.value;
+        set => _reference.input_day.value = value;
+    }
     public string output_class
     {
         get => _reference.output_class.text;
@@ -45,6 +52,7 @@ public class UI
         get => _reference.output_remain_time.text;
         set => _reference.output_remain_time.text = value;
     }
+    #endregion
 }
 
 public class UI_Reference : MonoBehaviour
@@ -53,6 +61,7 @@ public class UI_Reference : MonoBehaviour
     public Text input_start_time;
     public Text input_end_time;
     public Text input_url;
+    public Dropdown input_day;
 
     public Text output_class;
     public Text output_remain_time;

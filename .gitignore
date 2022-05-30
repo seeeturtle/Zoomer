@@ -6,5 +6,7 @@
 /ProjectSettings
 /Temp
 /UserSettings
+/Assets/FullSerializer
+/Assets/FullSerializer.meta
 Assembly-CSharp.csproj
 Zoomer.sln
