@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ExistState
@@ -20,11 +18,9 @@ public abstract class ExistState
                 return new Exist(c, new InClass());
             }
 
-            double my;
-
             if (t1.TotalMinutes < 0)
             {
-                my = -t1.TotalMinutes;
+                var my = -t1.TotalMinutes;
 
                 if (my < 20 && (min < 0 || my < min))
                 {
