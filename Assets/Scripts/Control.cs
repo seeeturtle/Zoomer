@@ -22,27 +22,12 @@ public class Control : MonoBehaviour
 
     public void OnGo()
     {
-        if (Core.Right.Exists)
-        {
-            Application.OpenURL(Core.Right.URL);
-        }
+        Core.Right.OnGo();
+
     }
     
     public void Update()
     {
-        double min = Core.Right.Calculate();
-
-        if (Core.Right.Exists)
-        {
-            Core.UI.output_class = Core.Right.Name;
-            if (min < 0)
-            {
-                Core.UI.output_remain_time = "지금 수업 중입니다!";
-            }
-            else
-            {
-                Core.UI.output_remain_time = min.ToString();
-            }
-        }
+        Core.Right.Update();
     }
 }

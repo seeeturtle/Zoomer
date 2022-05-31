@@ -1,53 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.PlayerLoop;
+using static UnityEngine.Application;
 
 public class Right
 {
-    private Class target;
-
-    public string URL => target.URL;
-    public string Name => target.Name;
-    public bool Exists => target != null;
+    private ExistState exist;
 
     public Right()
     {
-        target = null;
+        exist = new UnExist();
     }
 
-    public double Calculate()
+    public void OnGo()
     {
-        double min = -1;
-        foreach (var c in Core.Data.Classes)
-        {
-            TimeSpan t1 = DateTime.Now.TimeOfDay - c.Start.TimeOfDay;
-            TimeSpan t2 = DateTime.Now.TimeOfDay - c.End.TimeOfDay;
+        exist.OnGo();
+    }
 
-            if ((t1.TotalMinutes >= 0 && t2.TotalMinutes <= 0))
-            {
-                target = c;
-                break;
-            }
-
-            double my;
-
-            if (t1.TotalMinutes < 0)
-                my = -t1.TotalMinutes;
-            else
-                my = t2.TotalMinutes;
-
-            if (my < 20 && (min < 0 || my < min))
-            {
-                min = my;
-                target = c;
-            }
-        }
-
-        return min;
+    public void Update()
+    {
+        exist = exist.Update();
     }
 }
+
 //
 // public class FakeRight : Right
 // {
