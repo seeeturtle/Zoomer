@@ -8,8 +8,12 @@ public abstract class ExistState
     public virtual ExistState Update()
     {
         double min = -1;
+        ExistState next = null;
         foreach (var c in Core.Data.Classes)
         {
+            if (c.Day != (int)DateTime.Now.DayOfWeek - 1)
+                continue;
+            
             TimeSpan t1 = DateTime.Now.TimeOfDay - c.Start.TimeOfDay;
             TimeSpan t2 = DateTime.Now.TimeOfDay - c.End.TimeOfDay;
 
@@ -25,11 +29,14 @@ public abstract class ExistState
                 if (my < 20 && (min < 0 || my < min))
                 {
                     min = my;
-                    return new Exist(c, new Before(min));
+                    next = new Exist(c, new Before(min));
                 }
             }
         }
 
+        if (next != null)
+            return next;
+        
         return new UnExist();
     }
 }
